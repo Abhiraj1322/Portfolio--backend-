@@ -1,0 +1,17 @@
+extends ../common/layout
+
+block layout-content 
+  .main-content 
+    h1.page-title Login 
+    if err
+      p #{err}
+    form(method="post", action="/user/login")
+      div 
+        label(for="u") Username: 
+        input(type="text", id="u", name="u")
+      div 
+        label(for="pw") Password: 
+        input(type="password", id="pw", name="pw")
+      button(type="submit") Log in
+    p. 
+      Don't have an account? #[a(href="/user/register") Register now]

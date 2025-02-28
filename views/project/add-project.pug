@@ -1,0 +1,27 @@
+doctype html
+html(lang="en")
+  head
+    title Add Web Development Project
+    link(rel="stylesheet", href="/styles.css")
+  body
+    header
+      h1 Add New Web Development Project
+      nav
+        ul
+          li: a(href="/projects") Projects
+          li: a(href="/skills") Skills
+    section
+      form(action="/projects/add" method="POST")
+        label(for="name") Project Name:
+        input(type="text", id="name", name="name", required)
+        
+        label(for="description") Description:
+        textarea(id="description", name="description", required)
+        
+        label(for="tech") Technologies Used:
+        input(type="text", id="tech", name="tech", required)
+        
+        button(type="submit") Add Project
+
+    footer
+      p &copy; 2025 Abhiraj

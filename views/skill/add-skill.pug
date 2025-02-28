@@ -1,0 +1,27 @@
+doctype html
+html(lang="en")
+  head
+    title Add Skill
+    link(rel="stylesheet", href="/styles.css")
+  body
+    header
+      h1 Add New Skill
+      nav
+        ul
+          li: a(href="/projects") Projects
+          li: a(href="/skills") Skills
+    section
+      form(action="/skills/add" method="POST")
+        label(for="name") Skill Name:
+        input(type="text", id="name", name="name", required)
+        
+        label(for="level") Skill Level:
+        select(name="level", id="level", required)
+          option(value="Beginner") Beginner
+          option(value="Intermediate") Intermediate
+          option(value="Advanced") Advanced
+
+        button(type="submit") Add Skill
+
+    footer
+      p &copy; 2025 Abhiraj

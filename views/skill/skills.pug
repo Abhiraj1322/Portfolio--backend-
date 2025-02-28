@@ -1,0 +1,28 @@
+doctype html
+html(lang="en")
+  head
+    title Skills
+    link(rel="stylesheet", href="/styles.css") 
+  body
+    .container
+      h1 My Skills
+      
+      if skills && skills.length
+        table
+          thead
+            tr
+              th Skill Name
+              th Level
+              th Change Level
+              th Actions
+          tbody
+            each skill in skills
+              tr
+                td= skill.name
+                td= skill.level
+               
+                  form(action=`/skills/${skill._id}/delete`, method="POST", onsubmit="return confirm('Are you sure?')")
+                    button.delete-btn(type="submit") Delete
+      else
+        p.no-skills No skills added yet. Add some below!
+      
